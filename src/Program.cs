@@ -16,10 +16,9 @@ namespace Vensha {
             await client.LoginAsync (TokenType.Bot, Config.token);
             await client.StartAsync ();
 
-            await Task.Delay (-1);
-
             var commands = new Handlers.CommandHandler (client);
             await commands.initCommands ();
+            await Task.Delay (-1);
         }
 
         private Task Log (LogMessage msg) {
