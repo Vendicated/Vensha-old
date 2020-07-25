@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using Discord.Commands;
 using Discord.WebSocket;
+using Vensha.Config;
 
 namespace Vensha.Handlers {
     public class CommandHandler {
@@ -25,15 +26,15 @@ namespace Vensha.Handlers {
 
             int argPos = 0;
 
-            if (!(message.HasCharPrefix (Config.prefix, ref argPos) || message.HasMentionPrefix (client.CurrentUser, ref argPos)) || message.Author.IsBot)
+            if (!(message.HasCharPrefix (Configuration.prefix, ref argPos) || message.HasMentionPrefix (client.CurrentUser, ref argPos)) || message.Author.IsBot)
                 return;
 
             var context = new SocketCommandContext (client, message);
 
             var result = await commands.ExecuteAsync (context, argPos, null);
 
-            // if (!result.IsSuccess)
-            // await context.Channel.SendMessageAsync(result.ErrorReason);
+            if (!result.IsSuccess && result.ErrorReason != "Unknown command.")
+                await context.Channel.SendMessageAsync ($"An Error occurred:\n```cs\n{result}```");
         }
     }
 }
