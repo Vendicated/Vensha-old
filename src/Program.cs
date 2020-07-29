@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Discord;
 using Discord.WebSocket;
 using Vensha.Config;
+using Vensha.Extensions;
 using Vensha.Handlers;
 
 namespace Vensha {
