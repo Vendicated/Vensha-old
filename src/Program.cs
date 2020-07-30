@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Discord;
 using Discord.WebSocket;
-using Vensha.Config;
+using Vensha.Configuration;
 using Vensha.Extensions;
 using Vensha.Handlers;
 
@@ -16,7 +16,7 @@ namespace Vensha {
 
             client.Log += Log;
 
-            await client.LoginAsync (TokenType.Bot, Configuration.token);
+            await client.LoginAsync (TokenType.Bot, Config.token);
             await client.StartAsync ();
 
             var commands = new CommandHandler (client);

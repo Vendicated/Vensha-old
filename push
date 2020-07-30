@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+# I'm so lazy lol
 
 git add . 
 git commit -m "$@"
