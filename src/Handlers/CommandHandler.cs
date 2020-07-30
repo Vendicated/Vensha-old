@@ -1,7 +1,6 @@
 using System.Threading.Tasks;
 using Discord.Commands;
 using Discord.WebSocket;
-using Vensha.Configuration;
 
 namespace Vensha.Handlers {
     public class CommandHandler {
@@ -26,7 +25,7 @@ namespace Vensha.Handlers {
 
             int argPos = 0;
 
-            if (!(message.HasCharPrefix (Config.prefix, ref argPos) || message.HasMentionPrefix (client.CurrentUser, ref argPos)) || message.Author.IsBot)
+            if (!(message.HasStringPrefix (Program.Config.prefix, ref argPos) || message.HasMentionPrefix (client.CurrentUser, ref argPos)) || message.Author.IsBot)
                 return;
 
             var context = new SocketCommandContext (client, message);

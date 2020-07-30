@@ -12,7 +12,7 @@ namespace Vensha.Modules.Fun {
         [Command ("howharam")]
         [Alias ("howhalal", "haram", "halal")]
         public Task Run (Discord.IUser user) {
-            return Result (user?.Username);
+            return Result (user.Username);
         }
 
         [Command ("howharam")]
