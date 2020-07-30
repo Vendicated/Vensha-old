@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Discord.Commands;
 
-namespace Vensha.Commands.Fun {
+namespace Vensha.Modules.Fun {
     [Remarks ("Fun")]
     [Summary ("Find out how haram something is")]
 

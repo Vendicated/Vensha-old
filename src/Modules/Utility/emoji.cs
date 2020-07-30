@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Discord.Commands;
 
-namespace Vensha.Commands {
+namespace Vensha.Modules {
     [Remarks ("Utility")]
     [Summary ("Get the link to one or more emotes")]
 

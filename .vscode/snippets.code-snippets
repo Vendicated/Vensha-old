@@ -21,7 +21,7 @@
       "using System.Threading.Tasks;",
       "using Discord.Commands;",
       "",
-      "namespace Vensha.Commands {",
+      "namespace Vensha.Modules {",
       "public class Module : ModuleBase<SocketCommandContext> {",
       "[Command()]",
       "[Alias()]",

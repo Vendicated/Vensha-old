@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Discord.Commands;
 
-namespace Vensha.Commands.Utility {
+namespace Vensha.Modules.Utility {
     [Remarks ("Utility")]
     [Summary ("Check my latency")]
     public class Ping : ModuleBase<SocketCommandContext> {

@@ -5,7 +5,7 @@ using Discord;
 using Discord.Commands;
 using Vensha.Configuration;
 
-namespace Vensha.Commands {
+namespace Vensha.Modules {
     [Remarks ("Utility")]
     [Summary ("You are here ;)")]
 
