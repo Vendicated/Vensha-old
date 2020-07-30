@@ -3,19 +3,20 @@ using System.Threading.Tasks;
 using Discord.Commands;
 
 namespace Vensha.Commands.Fun {
+    [Remarks ("Fun")]
+    [Summary ("Find out how haram something is")]
+
     public class HowHaram : ModuleBase<SocketCommandContext> {
         private Random _random = new Random ();
 
         [Command ("howharam")]
         [Alias ("howhalal", "haram", "halal")]
-        [Summary ("Find out how haram something is")]
         public Task Run (Discord.IUser user) {
             return Result (user?.Username);
         }
 
         [Command ("howharam")]
         [Alias ("howhalal", "haram", "halal")]
-        [Summary ("Find out how haram something is")]
         public Task Run ([Remainder] string arg = null) {
             return Result (arg ?? Context.User.Username);
         }
