@@ -4,7 +4,7 @@ using Discord.Commands;
 namespace Vensha.Modules.Utility {
     [Remarks ("Utility")]
     [Summary ("Check my latency")]
-    public class Ping : ModuleBase<SocketCommandContext> {
+    public class PingModule : ModuleBase<SocketCommandContext> {
 
         [Command ("ping")]
         [Alias ("p", "ms", "latency")]

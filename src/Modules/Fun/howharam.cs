@@ -6,7 +6,7 @@ namespace Vensha.Modules.Fun {
     [Remarks ("Fun")]
     [Summary ("Find out how haram something is")]
 
-    public class HowHaram : ModuleBase<SocketCommandContext> {
+    public class HowHaramModule : ModuleBase<SocketCommandContext> {
         private Random _random = new Random ();
 
         [Command ("howharam")]
