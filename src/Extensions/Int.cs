@@ -1,12 +1,14 @@
 using System;
 
-namespace Vensha.Extensions {
-    public static class IntExtension {
+namespace Vensha.Extensions
+{
+    public static class IntExtension
+    {
+        public static string toOrdinal(this int num) => num.ToString() + getIndicator(num);
 
-        public static string toOrdinal (this int num) => num.ToString () + getIndicator (num);
-
-        public static string getIndicator (this int num) {
-            num = Math.Abs (num);
+        public static string getIndicator(this int num)
+        {
+            num = Math.Abs(num);
             int cent = num % 100;
             if (cent >= 10 && cent <= 20) return "th";
             int dec = num % 10;
