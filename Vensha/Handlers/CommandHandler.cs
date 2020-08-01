@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
-using Pomelo.EntityFrameworkCore.MySql;
 
 namespace Vensha.Handlers
 {
@@ -38,7 +37,7 @@ namespace Vensha.Handlers
 
             int argPos = 0;
 
-            if (!(message.HasStringPrefix(Program.Config.prefix, ref argPos) || message.HasMentionPrefix(client.CurrentUser, ref argPos)) || message.Author.IsBot)
+            if (!(message.HasStringPrefix(Program.config.prefix, ref argPos) || message.HasMentionPrefix(client.CurrentUser, ref argPos)) || message.Author.IsBot)
                 return;
 
             var context = new SocketCommandContext(client, message);

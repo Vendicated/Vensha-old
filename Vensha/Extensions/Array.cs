@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using str = System.String;
 
 namespace Vensha.Extensions
 {

@@ -20,13 +20,13 @@ namespace Vensha.Modules
         {
             var embed = new EmbedBuilder()
                 .WithTitle("Help menu")
-                .WithDescription($"View a list of commands below. For info on a specific command, use `{Program.Config.prefix}help [CommandName]`");
+                .WithDescription($"View a list of commands below. For info on a specific command, use `{Program.config.prefix}help [CommandName]`");
 
             foreach (string category in _service.Modules.Select(mod => mod.Remarks).Distinct().Where(c => c != "Development"))
             {
                 var commands = _service.Commands
                     .Where(cmd => cmd.Module.Remarks == category)
-                    .Select(cmd => $"`{Program.Config.prefix}{cmd.Name}` - {cmd.Module.Summary ?? "No description provided."}")
+                    .Select(cmd => $"`{Program.config.prefix}{cmd.Name}` - {cmd.Module.Summary ?? "No description provided."}")
                     .Distinct();
 
                 embed.AddField(category, String.Join('\n', commands));
@@ -45,10 +45,10 @@ namespace Vensha.Modules
             if (command == null || command.Module.Remarks == "Development") return ReplyAsync($"`{arg}` is not a valid command.");
 
             var embed = new EmbedBuilder()
-                .WithTitle(Program.Config.prefix + command.Name)
+                .WithTitle(Program.config.prefix + command.Name)
                 .WithDescription(command.Module.Summary ?? "No description provided.")
                 .AddField("Aliases", command.Aliases.Count > 0 ? String.Join(", ", command.Aliases) : $"{command.Name} has no aliases.")
-                .AddField("Usage", $"{Program.Config.prefix}{command.Name} {command.Remarks}");
+                .AddField("Usage", $"{Program.config.prefix}{command.Name} {command.Remarks}");
 
             return ReplyAsync("", false, embed.Build());
         }
