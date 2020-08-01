@@ -28,7 +28,7 @@ namespace Vensha
             config = JsonConvert.DeserializeObject<Configuration>(File.ReadAllText(Directory.GetCurrentDirectory() + "/config.json"));
 
             bool debug = args.Contains("debug");
-            if (debug) Console.WriteLine("Logging in in debug mode!");
+            if (debug) _ = Log(new LogMessage(LogSeverity.Info, "Debug Mode", "Debug mode enabled!"));
 
             await client.LoginAsync(TokenType.Bot, config.token);
             await client.StartAsync();
