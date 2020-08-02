@@ -20,6 +20,12 @@ namespace Vensha
 
         public async Task MainAsync(string[] args)
         {
+            var random = new Helpers.UniqueRandom();
+            System.Console.WriteLine(random.Next(1, 5));
+            System.Console.WriteLine(random.Next(10));
+            System.Console.WriteLine(random.Next(new string[] { }));
+            System.Console.WriteLine(random.Next(new int[] { 1, 2, 3, 4, 5 }));
+
             client = new DiscordSocketClient();
 
             client.Log += Log;
