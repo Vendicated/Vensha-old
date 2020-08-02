@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Discord;
 using Discord.WebSocket;
-using NekosSharp;
 using Newtonsoft.Json;
 using Vensha.Handlers;
 using Vensha.Types;
