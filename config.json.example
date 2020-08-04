@@ -1,0 +1,10 @@
+{
+  "token": "Discord_Bot_Token",
+  "prefix": "Discord_Bot_Prefix",
+  "twitter": {
+    "consumer_key": "Twitter_Consumer_Key",
+    "consumer_secret": "Twitter_Consumer_Secret",
+    "access_token": "Leave empty if using Oauth else Twitter_Access_Token",
+    "access_token_secret": "See above"
+  }
+}
